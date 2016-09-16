@@ -1,0 +1,163 @@
+// Print Layout
+@media print {
+    // body * { visibility: hidden; }
+    // #post-content * { visibility: visible; }
+    // #post-content { position: absolute; top: 40px; left: 30px; }
+}
+
+
+// Layout
+//
+.container {
+  max-width: 50rem;
+  padding-left:  1.5rem;
+  padding-right: 1.5rem;
+  margin-left:  auto;
+  margin-right: auto;
+}
+
+.content {
+  // padding-top:5rem;
+}
+
+figure.highlight {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+footer {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  font-size:90%;
+  text-align: center;
+}
+
+.footer-icons {
+  margin-bottom:2rem;
+
+  $color-icon: #5B7B92;
+
+  a {
+    padding-right:0.6rem;
+    padding-left:0.6rem;
+    color: $color-icon;
+    opacity: 0.4;
+    transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+  }
+
+  a:hover {
+      opacity: 1.0;
+  }
+
+  i.fa-twitter {
+      color: $color-twitter;
+  }
+
+  i.fa-github {
+      color:black;
+  }
+
+  i.fa-rss {
+      color:$color-rss;
+  }
+}
+
+.tagbox-old {
+    margin: 2rem 0px 2rem 0px;
+    text-align: center;
+    padding: 8px 0px;
+    border-top:1px solid $line-light;
+    border-bottom:1px solid $line-light;
+}
+
+.tagbox {
+    margin: 2rem 0px 2rem 0px;
+    padding: 10px 14px;
+    border: 1px solid #eee;
+    font-size: 0.9rem;
+    border-radius: 3px;
+    // background: rgba(0,0,0,.02);
+}
+
+a.tag {
+    color: #268bd2;
+    text-decoration: none;
+    border: 1px solid #ccc;
+    padding: 3px 8px;
+    border-radius: 4px;
+    margin: 0px 2px;
+    transition: all 0.5s ease-in-out;
+}
+
+a.tag:hover {
+    // background: #268bd2;
+    // color:white;
+    border: 1px solid #aaa;
+}
+
+.tagbox a.twitter-follow {
+    background: rgb(27, 149, 224);
+    color: white;
+    padding: 4px 8px;
+    font-size: 0.7rem;
+    border-radius: 3px;
+    transition: background 0.5s ease-in-out;
+
+    i.fa {
+        font-size: 0.8rem;
+    }
+}
+
+.tagbox a.twitter-follow:hover {
+    background: #1084CC;
+    text-decoration: none;
+}
+
+/**
+ * Tinyletter Subscription Box
+ */
+.tinyletter-label {
+    margin-bottom: 2px;
+}
+
+.tinyletter-submitbox {
+	border: 1px solid #CCC;
+	border-radius: 4px;
+	overflow: hidden;
+    padding: 4px;
+}
+
+.tinyletter-email {
+	box-sizing: border-box;
+	overflow: hidden;
+}
+
+.tinyletter-email input {
+	width: 100%;
+	height: 34px;
+	outline: none;
+	padding: 10px;
+	border: 0;
+	border-radius: 4px;
+}
+
+.tinyletter-submit {
+	float: right;
+}
+
+.tinyletter-submit input {
+	width: 125px;
+	height: 34px;
+	border-radius: 5px;
+	border: none;
+	background: #ccc;
+	color: white;
+	letter-spacing: 0em;
+	font-weight: 600;
+	cursor:pointer;
+}
+
+.tinyletter-submit input:hover {
+	background: #1097dc;
+}

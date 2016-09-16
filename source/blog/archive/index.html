@@ -1,0 +1,30 @@
+---
+layout: default
+title: Blog Archive
+bold-links: true
+sitemap:
+    priority: 0.8
+    changefreq: 'weekly'
+    lastmod: 2016-03-07T15:37:00
+---
+
+<div class="posts">
+{% for post in site.posts %}
+  {% assign currentdate = post.date | date: "%Y" %}
+  {% if currentdate != date %}
+    {% unless forloop.first %}</ul>{% endunless %}
+    <h2 id="y{{post.date | date: "%Y"}}">{{ currentdate }}</h2>
+    <ul>
+    {% assign date = currentdate %}
+  {% endif %}
+    <li><small>{{ post.date | date: "%b %d" }}&nbsp;</small> <a href="{{ post.url }}">{{ post.title }}</a>
+    {% comment %}
+	<br>
+	{% for tag in post.tags %}#{{ tag|downcase|replace:" ","-" }}{% if forloop.last == false %}, {% endif %}{% endfor %}
+    {% endcomment %}
+    </li>
+  {% if forloop.last %}</ul>{% endif %}
+{% endfor %}
+
+
+</div>

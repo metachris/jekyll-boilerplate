@@ -1,0 +1,45 @@
+---
+layout: default
+title: Blog
+bold-links: true
+sitemap:
+    priority: 0.9
+    changefreq: 'weekly'
+    lastmod: 2016-03-10T14:19:00
+---
+
+<div class="posts">
+  {% for post in paginator.posts %}
+  <article class="post">
+    <h1 class="post-title">
+	<a href="{{ site.url }}{{ site.baseurl }}{{ post.url }}">
+        {{ post.title }}
+      </a>
+    </h1>
+
+    <time datetime="{{ post.date | date_to_xmlschema }}" class="post-date">{{ post.date | date_to_string }}</time>
+
+    {{ post.content | markdownify }}
+  </article>
+
+  {% if forloop.last == false %}
+  <hr class="dark spaced">
+  {% endif %}
+
+  {% endfor %}
+</div>
+
+<div class="pagination">
+  {% if paginator.next_page %}
+    <a class="pagination-item older" href="{{ site.url }}{{ paginator.next_page_path | prepend: site.baseurl }}">← &nbsp;Older posts</a>
+  {% else %}
+    <span class="pagination-item older">← &nbsp;Older posts</span>
+  {% endif %}
+  {% if paginator.previous_page %}
+    <a class="pagination-item newer" href="{{ site.url }}{{ paginator.previous_page_path | prepend: site.baseurl }}">Newer posts&nbsp; →</a>
+  {% else %}
+    <span class="pagination-item newer">Newer posts&nbsp; →</span>
+  {% endif %}
+
+</div>
+<center><a href="/blog/archive">Blog Archive</a></center>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<html lang="en">
+
+  {% include head.html %}
+
+  <body>
+
+      <header class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+	    <a href="{{ site.url }}{{ site.baseurl }}/" title="Home">{{ site.title }}</a><br>
+            <span class="tagline">{{ site.tagline }}</span>
+          </h3>
+
+          <div class="navigation">
+            <span class="nav-action"><a href="/blog/archive/">Blog</a></span>
+            <span class="nav-action"><a href="/about/">About</a></span>
+            <!-- <span class="nav-action"><a style="color:#FF6600;" href="/atom.xml"><i class="fa fa-rss"></i></a></span> -->
+            <!-- <span class="nav-action"><a href="/contact">Contact</a></span> -->
+          </div>
+
+          <div style="clear:both;"></div>
+        </div>
+      </header>
+
+    <div class="container content">
+      <main class="{% if page.bold-links %}links-bold {% endif %}{% if page.justify %}justify {% endif %}">
+        {{ content }}
+      </main>
+
+      <footer class="footer">
+        <div class="footer-icons">
+            <a href="https://twitter.com/jaumetet" title="Twitter @jaumetet" target="_blank" rel="nofollow"><i class="fa fa-twitter fa-2x"></i></a>
+            <a href="/atom.xml" title="RSS Feed" target="_blank" rel="nofollow"><i class="fa fa-rss fa-2x"></i></a>
+          </div>
+
+        <small>
+          <!-- &copy; <time datetime="{{ site.time | date_to_xmlschema }}">{{ site.time | date: '%Y' }}</time> Chris Hager<br><small><a rel="nofollow" target="_blank" href="//creativecommons.org/licenses/by-nc-sa/3.0/">CC BY-NC-SA 3.0</a></small> -->
+        </small>
+      </footer>
+    </div>
+
+    <!-- JS -->
+    {% if page.js-jquery or page.js-highcharts %}<script src="/js/libs/jquery-1.8.2.min.js"></script>{% endif %}
+    {% if page.js-highcharts %}<script src="/js/libs//highcharts.js"></script>{% endif %}
+    {% for fn in page.js-files %}<script src="/js/{{ fn }}"></script>{% endfor %}
+    <script src="/js/blog.js"></script>
+  </body>
+</html>

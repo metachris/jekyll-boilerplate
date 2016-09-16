@@ -1,0 +1,45 @@
+#
+# http://jekyllrb.com/docs/configuration/
+
+encoding:     "utf-8"
+
+#
+# Permalinks
+#
+permalink: /:year/:month/:title.html
+
+# Setup
+title:               My Blog
+tagline:             tagline
+
+url:                 https://example.com
+
+# This variable indicates the root folder of your Jekyll site.
+# ("" means site is served at /) See http://stackoverflow.com/a/27400343
+baseurl:             ""
+
+paginate:            3
+paginate_path:       /blog/page:num
+
+# Assets
+#
+# We specify the directory for Jekyll so we can use @imports.
+sass:
+  sass_dir:          _sass
+  style:            :compressed
+
+# About/contact
+author:
+  name:              My Blog Team
+  url:               https://example.com
+  email:             admin@example.com
+
+exclude: [node_modules]
+
+gems: [jekyll-paginate]
+
+# jekyll-press:
+#   exclude: 'atom.xml' # Exclude files from processing - file name, glob pattern or array of file names and glob patterns
+#   js_options: {}      # js minifier options
+#   css_options: {}     # css minifier options
+#   html_options: {}    # html minifier options

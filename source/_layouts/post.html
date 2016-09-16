@@ -1,0 +1,52 @@
+---
+layout: default
+---
+
+<article class="post" id="post-content">
+  <h1 class="post-title">{{ page.title }}</h1>
+  <time datetime="{{ page.date | date_to_xmlschema }}" class="post-date">{{ page.date | date_to_string }}</time>
+
+  {{ content }}
+
+</article>
+
+<!-- <div class="swirl space-top"><center><img src="/images/swirl1.png" alt="swirl" height="40px" /></center></div> -->
+
+<br>
+
+<!-- <div class="tagbox"><div style="float:right;"><a class="twitter-follow" href="javascript:followOnTwitter()"><i class="fa fa-twitter"></i> Follow @metachris</a></div>Tags: {% for tag in page.tags %}<a class="tag" href="/blog/tags/#{{ tag|downcase|replace:" ","-" }}">{{ tag }}</a>{% if forloop.last == false %}{% endif %}{% endfor %}</div> -->
+
+
+<!-- <p>Posted in {% for tag in page.tags %}<a class="tag" href="/blog/tags/#{{ tag|downcase|replace:" ","-" }}">{{ tag }}</a>{% if forloop.last == false %}{% endif %}{% endfor %}</p> -->
+<p>Posted {{ page.date | date_to_string }}</p>
+
+{% if site.related_posts != empty %}
+<aside class="related">
+  Related Posts
+  <ul class="related-posts">
+    {% for post in site.related_posts limit:3 %}
+      <li>
+	    <a href="{{ site.url }}{{ site.baseurl }}{{ post.url }}">
+            {{ post.title }}
+            <small><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date_to_string }}</time></small>
+          </a>
+      </li>
+    {% endfor %}
+  </ul>
+</aside>
+
+<hr class="spaced">
+{% endif %}
+
+<div class="pagination">
+  {% if page.previous.url %}
+    <a class="pagination-item older" href="{{ page.previous.url }}">← &nbsp;{{ page.previous.title }}</a>
+  {% else %}
+    <span class="pagination-item older">← &nbsp;Previous post</span>
+  {% endif %}
+  {% if page.next.url %}
+    <a class="pagination-item newer" href="{{ page.next.url }}">{{ page.next.title }}&nbsp; →</a>
+  {% else %}
+    <span class="pagination-item newer">Next post&nbsp; →</span>
+  {% endif %}
+</div>
